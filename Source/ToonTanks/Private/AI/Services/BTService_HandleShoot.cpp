@@ -39,6 +39,7 @@ void UBTService_HandleShoot::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* 
 
 void UBTService_HandleShoot::ResetTimer()
 {
-	CurrentTimer = ShootRate;
+	CurrentTimer = FMath::FRandRange(FMath::Max(0.0f, ShootRate - ShootRateRandomDeviation), (ShootRate + ShootRateRandomDeviation));
+	UE_LOG(LogTemp, Display, TEXT("Shoot Interval: %f"), CurrentTimer);
 }
 

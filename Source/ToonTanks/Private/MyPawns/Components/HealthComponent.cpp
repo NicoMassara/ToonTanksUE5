@@ -49,7 +49,6 @@ void UHealthComponent::ReduceHealth(float Damage)
 	CurrentHealth_ = FMath::Clamp(CurrentHealth_, 0, MaxHealth_);
 	OnHealthChangedDelegate.Broadcast(GetHealthRatio());
 	GameMode_->ActorDamaged(GetOwner(), GetHealthRatio());
-	UE_LOG(LogTemp, Warning, TEXT("Health: %f"), GetHealthRatio());
 }
 
 void UHealthComponent::HandleDeath()

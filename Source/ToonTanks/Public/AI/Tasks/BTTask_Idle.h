@@ -28,7 +28,9 @@ private:
 private:
 	bool GetIsPlayerInRange(const UBehaviorTreeComponent& OwnerComp, float Range) const;
 	bool GetIsPlayerAlive(const UBehaviorTreeComponent& OwnerComp) const;
+	FVector GetOrbitLocation(const FVector& Center, float Radius, float AngleDegrees, char Axis = 'Z');
 
 protected:
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
+	virtual void TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds) override;
 };

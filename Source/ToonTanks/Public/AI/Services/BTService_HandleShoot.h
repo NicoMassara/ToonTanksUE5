@@ -20,6 +20,8 @@ public:
 private:
 	UPROPERTY(EditAnywhere)
 	float ShootRate = 0.75f;
+	UPROPERTY(EditAnywhere)
+	float ShootRateRandomDeviation = 0.5f;
 	float CurrentTimer;
 private:
 	void ResetTimer();

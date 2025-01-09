@@ -3,7 +3,7 @@
 
 #include "MyPawns/TurretPawn.h"
 
-#include "AI/TowerAIController.h"
+#include "AI/TurretAIController.h"
 
 
 // Sets default values
@@ -18,9 +18,7 @@ void ATurretPawn::BeginPlay()
 {
 	Super::BeginPlay();
 
-	TowerAIController_ = GetController<ATowerAIController>();
-	TowerAIController_->EnableShoot();
-	
+	TowerAIController_ = GetController<ATurretAIController>();
 }
 
 // Called every frame

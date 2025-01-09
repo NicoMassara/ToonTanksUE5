@@ -4,18 +4,18 @@
 
 #include "CoreMinimal.h"
 #include "AIController.h"
-#include "TowerAIController.generated.h"
+#include "TurretAIController.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class TOONTANKS_API ATowerAIController : public AAIController
+class TOONTANKS_API ATurretAIController : public AAIController
 {
 	GENERATED_BODY()
 
 public:
-	ATowerAIController();
+	ATurretAIController();
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Behavior Tree")
@@ -33,8 +33,6 @@ protected:
 	virtual void BeginPlay() override;
 	
 public:
-	UFUNCTION()
-	void EnableShoot() const;
 	UFUNCTION()
 	void SetPlayerDead();
 };

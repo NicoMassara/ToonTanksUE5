@@ -6,7 +6,7 @@
 #include "ShooterPawn.h"
 #include "TurretPawn.generated.h"
 
-class ATowerAIController;
+class ATurretAIController;
 
 UCLASS()
 class TOONTANKS_API ATurretPawn : public AShooterPawn
@@ -19,7 +19,7 @@ public:
 
 private:
 	UPROPERTY()
-	ATowerAIController* TowerAIController_;
+	ATurretAIController* TowerAIController_;
 
 private:
 	

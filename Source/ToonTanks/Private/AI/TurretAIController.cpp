@@ -1,17 +1,17 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "AI/TowerAIController.h"
+#include "AI/TurretAIController.h"
 
 #include "BehaviorTree/BlackboardComponent.h"
 #include "MyEnums/ETowerState.h"
 #include "MyGameModes/ToonTanksGameModeBase.h"
 
-ATowerAIController::ATowerAIController()
+ATurretAIController::ATurretAIController()
 {
 }
 
-void ATowerAIController::BeginPlay()
+void ATurretAIController::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -25,21 +25,16 @@ void ATowerAIController::BeginPlay()
 
 		if (auto toonTanksGameMode = Cast<AToonTanksGameModeBase>(GetWorld()->GetAuthGameMode()))
 		{
-			toonTanksGameMode->OnTankDeathDelegate.AddDynamic(this, &ATowerAIController::SetPlayerDead);
+			toonTanksGameMode->OnTankDeathDelegate.AddDynamic(this, &ATurretAIController::SetPlayerDead);
 		}
 	}
 }
 
-void ATowerAIController::EnableShoot() const
-{
-	BlackboardComponent_->SetValueAsBool(CanShootVariableName, true);
-}
-
-void ATowerAIController::SetPlayerDead()
+void ATurretAIController::SetPlayerDead()
 {
 	if (auto toonTanksGameMode = Cast<AToonTanksGameModeBase>(GetWorld()->GetAuthGameMode()))
 	{
-		toonTanksGameMode->OnTankDeathDelegate.RemoveDynamic(this, &ATowerAIController::SetPlayerDead);
+		toonTanksGameMode->OnTankDeathDelegate.RemoveDynamic(this, &ATurretAIController::SetPlayerDead);
 	}
 	BlackboardComponent_->SetValueAsBool(PlayerAliveVariableName, false);
 	BlackboardComponent_->SetValueAsEnum(CurrentStateVariableName, ETowerState::Idle);

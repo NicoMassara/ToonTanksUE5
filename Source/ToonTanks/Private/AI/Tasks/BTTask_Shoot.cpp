@@ -18,12 +18,12 @@ UBTTask_Shoot::UBTTask_Shoot()
 EBTNodeResult::Type UBTTask_Shoot::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
 	Super::ExecuteTask(OwnerComp, NodeMemory);
-
+	
 	APawn* pawnRef = OwnerComp.GetAIOwner()->GetPawn();
 	if (!pawnRef) { return EBTNodeResult::Failed; }
 	TowerPawnRef_ = Cast<ATurretPawn>(pawnRef);
 	if (!TowerPawnRef_) { return EBTNodeResult::Failed; }
-	if (!GetIsPlayerInRange(OwnerComp, ShootRange_))
+	if (!GetIsPlayerInRange(OwnerComp, ShootRange_) || !GetCanShoot(OwnerComp))
 	{
 		OwnerComp.GetBlackboardComponent()->SetValueAsEnum(CurrentStateVariableName_, ETowerState::Focus);
 		AbortTask(OwnerComp, NodeMemory);
@@ -40,4 +40,9 @@ bool UBTTask_Shoot::GetIsPlayerInRange(const UBehaviorTreeComponent& OwnerComp, 
 {
 	float distanceToPlayer = OwnerComp.GetBlackboardComponent()->GetValueAsFloat(DistanceVariableName);
 	return distanceToPlayer <= Range;
+}
+
+bool UBTTask_Shoot::GetCanShoot(const UBehaviorTreeComponent& OwnerComp) const
+{
+	return OwnerComp.GetBlackboardComponent()->GetValueAsBool(GetSelectedBlackboardKey());
 }

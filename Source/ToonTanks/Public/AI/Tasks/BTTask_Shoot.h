@@ -30,6 +30,7 @@ private:
 
 private:
 	bool GetIsPlayerInRange(const UBehaviorTreeComponent& OwnerComp, float Range) const;
+	bool GetCanShoot(const UBehaviorTreeComponent& OwnerComp) const;
 
 protected:
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;

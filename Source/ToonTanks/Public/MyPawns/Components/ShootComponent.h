@@ -9,7 +9,7 @@
 
 class AProjectileActor;
 
-UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
+UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent, DisplayName = "Shoot Component", ToolTip = "Handles Shooting"))
 class TOONTANKS_API UShootComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -20,7 +20,7 @@ public:
 private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<AProjectileActor> ProjectileClass_;
-	UPROPERTY(EditAnywhere, Category = "Shooter Values")
+	UPROPERTY(EditAnywhere, Category = "Shooter Values", meta = (ClampMin = 0.1, ClampMax = 3))
 	float FireRate_ = 0.5f;
 
 	float CurrentCooldown_;

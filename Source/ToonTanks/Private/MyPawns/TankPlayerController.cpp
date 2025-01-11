@@ -14,10 +14,12 @@ void ATankPlayerController::SetPlayerInputEnabled(bool bEnabled)
 	if (bEnabled)
 	{
 		GetPawn()->EnableInput(this);
+		SetInputMode(FInputModeGameOnly());
 	}
 	else
 	{
 		GetPawn()->DisableInput(this);
+		SetInputMode(FInputModeUIOnly());
 	}
 
 	bShowMouseCursor = bEnabled;

@@ -18,9 +18,9 @@ public:
 	UBTService_HandleShoot();
 
 private:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (ClampMin = 0.15f, ClampMax = 3))
 	float ShootRate = 0.75f;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (ClampMin = 0.1f, ClampMax = 2))
 	float ShootRateRandomDeviation = 0.5f;
 	float CurrentTimer;
 private:

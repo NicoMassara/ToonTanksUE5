@@ -23,7 +23,7 @@ private:
 	FName DistanceVariableName;
 	UPROPERTY(EditAnywhere)
 	FName CurrentStateVariableName_;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (ClampMin = 100, ClampMax = 3000))
 	float ShootRange_ = 500.f;
 	UPROPERTY()
 	ATurretPawn* TowerPawnRef_ {};

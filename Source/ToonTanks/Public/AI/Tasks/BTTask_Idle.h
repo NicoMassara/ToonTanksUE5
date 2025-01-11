@@ -18,7 +18,7 @@ public:
 	UBTTask_Idle();
 	
 private:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (ClampMin = 1, ClampMax = 10000))
 	float PlayerInRange_ = 1000.f;
 	UPROPERTY(EditAnywhere)
 	FName CurrentStateVariableName_;

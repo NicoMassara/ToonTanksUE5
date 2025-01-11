@@ -36,12 +36,12 @@ private:
 	UPROPERTY(EditAnywhere)
 	UShootComponent* ShootComponent_;
 
-	UPROPERTY(EditAnywhere, Category="Movement")
+	UPROPERTY(EditAnywhere, Category="Movement", meta = (ClampMin = 0.1f, ClampMax = 50))
 	float LookLerp_ = 20.f;
 
 	UPROPERTY(EditAnywhere, Category = "Death")
 	UParticleSystem* DeathParticle_;
-	UPROPERTY(EditAnywhere, Category = "Death")
+	UPROPERTY(EditAnywhere, Category = "Death", meta = (ClampMin = .25f, ClampMax = 5f))
 	float DeathParticleScale_ = 1.f;
 
 	UPROPERTY(EditAnywhere, Category = "Death")

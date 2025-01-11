@@ -1,20 +1,19 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "AI/Services/BTService_PlayerLocation.h"
+#include "AI/Services/BTService_PlayerPosition.h"
 
-#include "AIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
-UBTService_PlayerLocation::UBTService_PlayerLocation()
+UBTService_PlayerPosition::UBTService_PlayerPosition()
 {
-	NodeName = "Player Location";
+	NodeName = "Player Position";
 }
 
-void UBTService_PlayerLocation::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
+void UBTService_PlayerPosition::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
 {
 	Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
-	
+
 	APawn* playerRef = GetWorld()->GetFirstPlayerController()->GetPawn();
 	if (!playerRef) {return;}
 	

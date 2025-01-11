@@ -4,6 +4,8 @@
 #include "AI/Tasks/BTTask_Shoot.h"
 
 #include "AIController.h"
+#include "AI/TurretAIController.h"
+#include "AI/DataAsset/TurretAIDataAsset.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "MyEnums/ETowerState.h"
 #include "MyPawns/TurretPawn.h"
@@ -18,12 +20,22 @@ UBTTask_Shoot::UBTTask_Shoot()
 EBTNodeResult::Type UBTTask_Shoot::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
 	Super::ExecuteTask(OwnerComp, NodeMemory);
+
+	if (!IsValid(AIData_))
+	{
+		AIData_ = Cast<ATurretAIController>(OwnerComp.GetAIOwner())->GetAIData();
+		if (!AIData_)
+		{
+			UE_LOG(LogTemp, Error, TEXT("AI Data is NULL"));
+			return EBTNodeResult::Failed;
+		}
+	}
 	
 	APawn* pawnRef = OwnerComp.GetAIOwner()->GetPawn();
 	if (!pawnRef) { return EBTNodeResult::Failed; }
 	TowerPawnRef_ = Cast<ATurretPawn>(pawnRef);
 	if (!TowerPawnRef_) { return EBTNodeResult::Failed; }
-	if (!GetIsPlayerInRange(OwnerComp, ShootRange_) || !GetCanShoot(OwnerComp))
+	if (!GetIsPlayerInRange(OwnerComp, AIData_->GetShootRange()) || !GetCanShoot(OwnerComp))
 	{
 		OwnerComp.GetBlackboardComponent()->SetValueAsEnum(CurrentStateVariableName_, ETowerState::Focus);
 		AbortTask(OwnerComp, NodeMemory);

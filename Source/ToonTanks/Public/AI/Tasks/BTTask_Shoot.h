@@ -10,6 +10,7 @@
  * 
  */
 class ATurretPawn;
+class UTurretAIDataAsset;
 UCLASS()
 class TOONTANKS_API UBTTask_Shoot : public UBTTask_BlackboardBase
 {
@@ -23,10 +24,10 @@ private:
 	FName DistanceVariableName;
 	UPROPERTY(EditAnywhere)
 	FName CurrentStateVariableName_;
-	UPROPERTY(EditAnywhere, meta = (ClampMin = 100, ClampMax = 3000))
-	float ShootRange_ = 500.f;
-	UPROPERTY()
-	ATurretPawn* TowerPawnRef_ {};
+	
+	TObjectPtr<ATurretPawn> TowerPawnRef_ {};
+
+	TObjectPtr<UTurretAIDataAsset> AIData_;
 
 private:
 	bool GetIsPlayerInRange(const UBehaviorTreeComponent& OwnerComp, float Range) const;

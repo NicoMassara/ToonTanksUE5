@@ -6,12 +6,16 @@
 #include "ShooterPawn.h"
 #include "TankPawn.generated.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(LogTank, Warning, All);
+
 class ATankPlayerController;
 class UCameraComponent;
 class USpringArmComponent;
 class UInputMappingContext;
 class UInputAction;
+class UTankDataAsset;
 class UCameraShakeBase;
+
 UCLASS()
 class TOONTANKS_API ATankPawn : public AShooterPawn
 {
@@ -33,10 +37,9 @@ private:
 	USpringArmComponent* SpringArmComp_;
 	UPROPERTY(EditAnywhere)
 	UCameraComponent* CameraComp_;
-	UPROPERTY(EditAnywhere, Category = "Movement", meta = (ClampMin = 10f, ClampMax = 500, Units="m/s"))
-	float Speed_ = 200.f;
-	UPROPERTY(EditAnywhere, Category = "Movement", meta = (ClampMin = 1, ClampMax = 100))
-	float TurnRate_ = 100.f;
+	
+	TObjectPtr<UTankDataAsset> TankData_;
+	
 	ATankPlayerController* TankPlayerController_;
 
 	

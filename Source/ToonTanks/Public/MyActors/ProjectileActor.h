@@ -23,16 +23,16 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere)
-	TObjectPtr<UStaticMeshComponent> MeshComponent_;
+	UStaticMeshComponent* MeshComponent_;
 
 	UPROPERTY(EditAnywhere)
 	USphereComponent* SphereComponent_;
 
 	UPROPERTY(EditAnywhere)
-	TObjectPtr<UProjectileMovementComponent> ProjectileMovementComponent_;
+	UProjectileMovementComponent* ProjectileMovementComponent_;
 
 	UPROPERTY(EditAnywhere)
-	TObjectPtr<UParticleSystemComponent> ParticleComponent_;
+	UParticleSystemComponent* ParticleComponent_;
 
 	UPROPERTY(EditAnywhere, Category="Combat", meta = (ClampMin = 1, ClampMax = 200))
 	float Damage_ = 10.f;

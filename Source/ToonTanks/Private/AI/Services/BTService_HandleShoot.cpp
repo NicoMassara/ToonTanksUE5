@@ -3,24 +3,38 @@
 
 #include "AI/Services/BTService_HandleShoot.h"
 
+#include "AI/TurretAIController.h"
+#include "AI/DataAsset/TurretAIDataAsset.h"
+#include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 UBTService_HandleShoot::UBTService_HandleShoot()
 {
 	NodeName = "Handle Shoot";
-
 }
 
 void UBTService_HandleShoot::InitializeFromAsset(UBehaviorTree& Asset)
 {
 	Super::InitializeFromAsset(Asset);
-	ResetTimer();
+
+	CurrentTimer = 1.f;
 }
 
 void UBTService_HandleShoot::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
 {
 	Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 
+	if (!IsValid(AIData_))
+	{
+		AIData_ = Cast<ATurretAIController>(OwnerComp.GetAIOwner())->GetAIData();
+
+		if (AIData_ == nullptr)
+		{
+			UE_LOG(LogTemp, Error, TEXT("AI Data is NULL"));
+			return;
+		}
+	}
+	
 	bool bCanShoot = OwnerComp.GetBlackboardComponent()->GetValueAsBool(GetSelectedBlackboardKey());
 
 	if(!bCanShoot)
@@ -39,7 +53,8 @@ void UBTService_HandleShoot::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* 
 
 void UBTService_HandleShoot::ResetTimer()
 {
-	CurrentTimer = FMath::FRandRange(FMath::Max(0.0f, ShootRate - ShootRateRandomDeviation), (ShootRate + ShootRateRandomDeviation));
+	
+	CurrentTimer = FMath::FRandRange(FMath::Max(0.0f, AIData_->GetShootRate() - ShootRateRandomDeviation), (ShootRate_ + ShootRateRandomDeviation));
 	UE_LOG(LogTemp, Display, TEXT("Shoot Interval: %f"), CurrentTimer);
 }
 

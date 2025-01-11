@@ -9,6 +9,9 @@
 /**
  * 
  */
+DECLARE_LOG_CATEGORY_EXTERN(TurretAILog, Warning, All)
+class UTurretAIDataAsset;
+
 UCLASS()
 class TOONTANKS_API ATurretAIController : public AAIController
 {
@@ -27,6 +30,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Behavior Tree|Variables Names")
 	FName PlayerAliveVariableName;
 
+	UPROPERTY(EditAnywhere, Category = "Behavior Tree")
+	UTurretAIDataAsset* AIData_;
+	
 	UBlackboardComponent* BlackboardComponent_;
 
 protected:
@@ -35,4 +41,5 @@ protected:
 public:
 	UFUNCTION()
 	void SetPlayerDead();
+	UTurretAIDataAsset* GetAIData() const;
 };

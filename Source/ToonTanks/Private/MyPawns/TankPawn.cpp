@@ -9,7 +9,9 @@
 #include "EnhancedInputSubsystems.h"
 #include "Kismet/GameplayStatics.h"
 #include "MyPawns/TankPlayerController.h"
+#include "MyPawns/DataAssets/TankDataAsset.h"
 
+DEFINE_LOG_CATEGORY(LogTank)
 
 // Sets default values
 ATankPawn::ATankPawn()
@@ -29,6 +31,12 @@ void ATankPawn::BeginPlay()
 	Super::BeginPlay();
 
 	TankPlayerController_ = GetController<ATankPlayerController>();
+
+	TankData_= Cast<UTankDataAsset>(this->PawnDataAsset_);
+	if (TankData_ == nullptr)
+	{
+		UE_LOG(LogTank, Error, TEXT("TankData is NULL"));
+	}
 }
 
 void ATankPawn::NotifyControllerChanged()
@@ -117,16 +125,28 @@ void ATankPawn::HandleShoot(const FInputActionInstance& Instance)
 
 void ATankPawn::Move(float Input)
 {
+	if (TankData_ == nullptr)
+	{
+		UE_LOG(LogTank, Error, TEXT("TankData is NULL"));
+		return;
+	}
+	
 	FVector deltaLocation = FVector::ZeroVector;
-	float finalSpeed = Speed_ * UGameplayStatics::GetWorldDeltaSeconds(this);
+	float finalSpeed = TankData_->GetSpeed() * UGameplayStatics::GetWorldDeltaSeconds(this);
 	deltaLocation.X = Input * finalSpeed;
 	AddActorLocalOffset(deltaLocation, true);
 }
 
 void ATankPawn::Turn(float Input)
 {
+	if (TankData_ == nullptr)
+	{
+		UE_LOG(LogTank, Error, TEXT("TankData is NULL"));
+		return;
+	}
+	
 	FRotator deltaRotator = FRotator::ZeroRotator;
-	float finalRotationSpeed = TurnRate_ * UGameplayStatics::GetWorldDeltaSeconds(this);
+	float finalRotationSpeed = TankData_->GetTurnRate() * UGameplayStatics::GetWorldDeltaSeconds(this);
 	deltaRotator.Yaw = Input * finalRotationSpeed;
 	AddActorLocalRotation(deltaRotator);
 }

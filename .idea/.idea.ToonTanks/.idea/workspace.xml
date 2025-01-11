@@ -12,24 +12,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="919b02be-405d-4701-8044-d5c739dadf1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyEnums/ETest.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyEnums/ETest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/DataAsset/TurretAIDataAsset.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/DataAssets/PawnDataAsset.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/DataAssets/ShooterDataAsset.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/DataAssets/TankDataAsset.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/DataAsset/TurretAIDataAsset.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/DataAssets/PawnDataAsset.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/DataAssets/ShooterDataAsset.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/DataAssets/TankDataAsset.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToonTanks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToonTanks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/BB_Tower.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/BP_TowerAIController.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/BT_Tower.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI/BT_Tower.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/IM_Tank.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/IM_Tank.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/BP_TurretAIController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI/BP_TurretAIController.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/BT_Turret.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI/BT_Turret.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_TankPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_TankPawn.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_TurretPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_TurretPawn.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/Main.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Main.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Services/BTService_PlayerLocation.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/TankPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/TankPlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Services/BTService_HandleShoot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Services/BTService_HandleShoot.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_Idle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_Idle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_LookAtPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_LookAtPlayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_Shoot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_Shoot.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/TurretAIController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/TurretAIController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/Components/ShootComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/Components/ShootComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/ShooterPawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/ShooterPawn.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/TankPawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/TankPawn.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Services/BTService_HandleShoot.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Services/BTService_HandleShoot.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Services/BTService_PlayerLocation.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_Idle.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_Idle.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_LookAtPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_LookAtPlayer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_Shoot.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_Shoot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/TurretAIController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/TurretAIController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyActors/ProjectileActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyActors/ProjectileActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/Components/HealthComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/Components/HealthComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/Components/ShootComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/Components/ShootComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/ShooterPawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/ShooterPawn.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/TankPawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/TankPawn.h" afterDir="false" />
@@ -43,8 +53,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://C:/Program Files/UEditor/UE_5.5/Engine/Source/Runtime/AIModule/Classes/AIController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ToonTanks/Private/AI/Services/BTService_PlayerDistance.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ToonTanks/Private/AI/Services/BTService_PlayerLocation.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
@@ -169,6 +179,7 @@
       <workItem from="1736606263524" duration="376000" />
       <workItem from="1736606663616" duration="72000" />
       <workItem from="1736606774903" duration="847000" />
+      <workItem from="1736607995750" duration="5056000" />
     </task>
     <servers />
   </component>

@@ -7,6 +7,7 @@
 #include "MyEnums/ETowerState.h"
 #include "MyGameModes/ToonTanksGameModeBase.h"
 
+DEFINE_LOG_CATEGORY(TurretAILog)
 ATurretAIController::ATurretAIController()
 {
 }
@@ -38,4 +39,15 @@ void ATurretAIController::SetPlayerDead()
 	}
 	BlackboardComponent_->SetValueAsBool(PlayerAliveVariableName, false);
 	BlackboardComponent_->SetValueAsEnum(CurrentStateVariableName, ETowerState::Idle);
+}
+
+UTurretAIDataAsset* ATurretAIController::GetAIData() const
+{
+	if (AIData_ == nullptr)
+	{
+		UE_LOG(TurretAILog, Error, TEXT("ATurretAIController::GetAIData()"));
+		return nullptr;
+	}
+	
+	return AIData_;
 }

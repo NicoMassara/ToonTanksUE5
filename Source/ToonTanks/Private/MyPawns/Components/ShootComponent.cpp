@@ -3,7 +3,9 @@
 
 #include "MyPawns/Components/ShootComponent.h"
 #include "MyActors/ProjectileActor.h"
+#include "MyPawns/DataAssets/ShooterDataAsset.h"
 
+DEFINE_LOG_CATEGORY(LogShoot)
 
 // Sets default values for this component's properties
 UShootComponent::UShootComponent()
@@ -22,6 +24,11 @@ void UShootComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
+
+	if (ShootData_ == nullptr)
+	{
+		UE_LOG(LogShoot, Warning, TEXT("Shoot Data is NULL"));
+	}
 	
 }
 
@@ -38,23 +45,40 @@ void UShootComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 	}
 }
 
-void UShootComponent::HandleFire(USceneComponent* ShootPoint)
+void UShootComponent::HandleFire(const USceneComponent* ShootPoint)
 {
+	if (ShootData_ == nullptr)
+	{
+		UE_LOG(LogShoot, Warning, TEXT("Shoot Data is NULL"));
+		return;
+	}
+	
 	if (!GetCanShoot())
 	{
 		return;
 	}
 
-	CurrentCooldown_ = FireRate_;
+	ResetCooldown();
 	FVector location = ShootPoint->GetComponentLocation();
 	FRotator rotation = ShootPoint->GetComponentRotation();
 	AProjectileActor* projectileRef =GetWorld()->SpawnActor<AProjectileActor>(
-		ProjectileClass_,
+		ShootData_->GetProjectile(),
 		location,
 		rotation
 		);
 	
 	projectileRef->SetOwner(GetOwner());
+}
+
+void UShootComponent::ResetCooldown()
+{
+	if (ShootData_ == nullptr)
+	{
+		UE_LOG(LogShoot, Warning, TEXT("Shoot Data is NULL"));
+		return;
+	}
+	
+	CurrentCooldown_ = ShootData_->GetFireRate();
 }
 
 bool UShootComponent::GetCanShoot() const

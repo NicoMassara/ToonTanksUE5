@@ -7,6 +7,7 @@
 #include "BTTask_LookAtPlayer.generated.h"
 
 class ATurretPawn;
+class UTurretAIDataAsset;
 /**
  * 
  */
@@ -25,12 +26,11 @@ private:
 	FName ShootVariableName_;
 	UPROPERTY(EditAnywhere)
 	FName CurrentStateVariableName_;
-	UPROPERTY(EditAnywhere, meta = (ClampMin = 100, ClampMax = 3000))
-	float ShootRange_ = 500.f;
-	UPROPERTY(EditAnywhere, meta = (ClampMin = 100, ClampMax = 10000))
-	float PlayerOutOfRange_ = 1000.f;
-	UPROPERTY()
-	ATurretPawn* TowerPawnRef_ {};
+
+	
+	TObjectPtr<ATurretPawn> TowerPawnRef_ {};
+
+	TObjectPtr<UTurretAIDataAsset> AIData_;
 
 private:
 	bool GetIsPlayerInRange(const UBehaviorTreeComponent& OwnerComp, float Range) const;

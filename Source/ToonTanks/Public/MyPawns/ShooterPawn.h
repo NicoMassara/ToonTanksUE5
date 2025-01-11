@@ -6,12 +6,15 @@
 #include "GameFramework/Pawn.h"
 #include "ShooterPawn.generated.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(LogShooterPawn, Warning, All)
+
 class UShootComponent;
 class UCapsuleComponent;
 class UShootComponent;
 class UParticleSystem;
 class USoundBase;
-UCLASS()
+
+UCLASS(Abstract)
 class TOONTANKS_API AShooterPawn : public APawn
 {
 	GENERATED_BODY()
@@ -35,12 +38,10 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	UShootComponent* ShootComponent_;
-
-	UPROPERTY(EditAnywhere, Category="Movement", meta = (ClampMin = 0.1f, ClampMax = 50))
-	float LookLerp_ = 20.f;
-
+	
 	UPROPERTY(EditAnywhere, Category = "Death")
 	UParticleSystem* DeathParticle_;
+	
 	UPROPERTY(EditAnywhere, Category = "Death", meta = (ClampMin = .25f, ClampMax = 5f))
 	float DeathParticleScale_ = 1.f;
 
@@ -51,6 +52,8 @@ private:
 	
 private:
 protected:
+	UPROPERTY(EditDefaultsOnly, Category= "Pawn Data")
+	class UPawnDataAsset* PawnDataAsset_;
 
 protected:
 	// Called when the game starts or when spawned

@@ -6,8 +6,9 @@
 #include "Components/ActorComponent.h"
 #include "ShootComponent.generated.h"
 
-
+DECLARE_LOG_CATEGORY_EXTERN(LogShoot, Warning, All)
 class AProjectileActor;
+class UShooterDataAsset;
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent, DisplayName = "Shoot Component", ToolTip = "Handles Shooting"))
 class TOONTANKS_API UShootComponent : public UActorComponent
@@ -18,15 +19,12 @@ public:
 	// Sets default values for this component's properties
 	UShootComponent();
 private:
-	UPROPERTY(EditDefaultsOnly)
-	TSubclassOf<AProjectileActor> ProjectileClass_;
-	UPROPERTY(EditAnywhere, Category = "Shooter Values", meta = (ClampMin = 0.1, ClampMax = 3))
-	float FireRate_ = 0.5f;
-
+	UPROPERTY(EditDefaultsOnly, Category = "Shoot Data")
+	UShooterDataAsset* ShootData_;
 	float CurrentCooldown_;
 	
 private:
-
+	void ResetCooldown();
 	bool GetCanShoot() const;
 protected:
 	// Called when the game starts
@@ -37,5 +35,5 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType,
 	                           FActorComponentTickFunction* ThisTickFunction) override;
 
-	void HandleFire(USceneComponent* ShootPoint);
+	void HandleFire(const USceneComponent* ShootPoint);
 };

@@ -6,6 +6,7 @@
 #include "BehaviorTree/Tasks/BTTask_BlackboardBase.h"
 #include "BTTask_Idle.generated.h"
 
+class UTurretAIDataAsset;
 /**
  * 
  */
@@ -18,17 +19,16 @@ public:
 	UBTTask_Idle();
 	
 private:
-	UPROPERTY(EditAnywhere, meta = (ClampMin = 1, ClampMax = 10000))
-	float PlayerInRange_ = 1000.f;
 	UPROPERTY(EditAnywhere)
 	FName CurrentStateVariableName_;
 	UPROPERTY(EditAnywhere)
 	FName IsPlayerAliveVariableName_;
+
+	TObjectPtr<UTurretAIDataAsset> AIData_;
 	
 private:
 	bool GetIsPlayerInRange(const UBehaviorTreeComponent& OwnerComp, float Range) const;
 	bool GetIsPlayerAlive(const UBehaviorTreeComponent& OwnerComp) const;
-	FVector GetOrbitLocation(const FVector& Center, float Radius, float AngleDegrees, char Axis = 'Z');
 
 protected:
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;

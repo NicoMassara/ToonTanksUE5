@@ -6,6 +6,9 @@
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "MyPawns/Components/ShootComponent.h"
+#include "MyPawns/DataAssets/PawnDataAsset.h"
+
+DEFINE_LOG_CATEGORY(LogShooterPawn)
 
 // Sets default values
 AShooterPawn::AShooterPawn()
@@ -33,10 +36,21 @@ void AShooterPawn::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	if (PawnDataAsset_ == nullptr)
+	{
+		UE_LOG(LogShooterPawn, Error, TEXT("PawnData is NULL"));
+	}
+	
 }
 
 void AShooterPawn::RotateTurret(FVector LookAtTarget)
 {
+	if (PawnDataAsset_ == nullptr)
+	{
+		UE_LOG(LogShooterPawn, Error, TEXT("PawnData is NULL"));
+		return;
+	}
+	
 	FRotator currentRotation = TurretMeshComp_->GetComponentRotation();
 	FVector toTarget = LookAtTarget - TurretMeshComp_->GetComponentLocation();
 	FRotator lookAtRotation = FRotator(0, toTarget.Rotation().Yaw, 0);
@@ -46,7 +60,7 @@ void AShooterPawn::RotateTurret(FVector LookAtTarget)
 		currentRotation,
 		lookAtRotation,
 		UGameplayStatics::GetWorldDeltaSeconds(this),
-		LookLerp_));
+		PawnDataAsset_->GetLookLerp()));
 }
 
 void AShooterPawn::Shoot()

@@ -9,6 +9,7 @@
 /**
  * 
  */
+class UTurretAIDataAsset;
 UCLASS()
 class TOONTANKS_API UBTService_HandleShoot : public UBTService_BlackboardBase
 {
@@ -18,11 +19,12 @@ public:
 	UBTService_HandleShoot();
 
 private:
-	UPROPERTY(EditAnywhere, meta = (ClampMin = 0.15f, ClampMax = 3))
-	float ShootRate = 0.75f;
 	UPROPERTY(EditAnywhere, meta = (ClampMin = 0.1f, ClampMax = 2))
 	float ShootRateRandomDeviation = 0.5f;
 	float CurrentTimer;
+	float ShootRate_;
+
+	TObjectPtr<UTurretAIDataAsset> AIData_;
 private:
 	void ResetTimer();
 

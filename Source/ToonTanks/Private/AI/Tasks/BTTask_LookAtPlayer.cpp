@@ -32,7 +32,6 @@ EBTNodeResult::Type UBTTask_LookAtPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 		}
 	}
 	
-	
 	APawn* pawnRef = OwnerComp.GetAIOwner()->GetPawn();
 	if (!pawnRef)
 	{
@@ -43,7 +42,6 @@ EBTNodeResult::Type UBTTask_LookAtPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 	{
 		return EBTNodeResult::Failed;
 	}
-	
 
 	return EBTNodeResult::InProgress;
 }
@@ -53,15 +51,11 @@ void UBTTask_LookAtPlayer::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* No
 	Super::TickTask(OwnerComp, NodeMemory, DeltaSeconds);
 
 	TowerPawnRef_->RotateTurret(GetPlayerLocation(OwnerComp));
-
-
-	
 	if (!GetIsPlayerInRange(OwnerComp, AIData_->GetPlayerOutRange()))
 	{
 		OwnerComp.GetBlackboardComponent()->SetValueAsEnum(CurrentStateVariableName_, ETowerState::Idle);
 		AbortTask(OwnerComp, NodeMemory);
 		FinishLatentTask(OwnerComp, EBTNodeResult::Aborted);
-		UE_LOG(LogTemp, Warning, TEXT("Here 6"));
 		return;
 	}
 

@@ -33,22 +33,28 @@ EBTNodeResult::Type UBTTask_Idle::ExecuteTask(UBehaviorTreeComponent& OwnerComp,
 			return EBTNodeResult::Failed;
 		}
 	}
-	
-	if(GetIsPlayerInRange(OwnerComp, AIData_->GetPlayerInRange() && GetIsPlayerAlive(OwnerComp)))
+
+	TurretRef_ = Cast<ATurretPawn>(OwnerComp.GetAIOwner()->GetPawn());
+	if (TurretRef_ == nullptr)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Here 2"));
-		OwnerComp.GetBlackboardComponent()->SetValueAsEnum(CurrentStateVariableName_, ETowerState::Focus);
-		AbortTask(OwnerComp, NodeMemory);
-		FinishLatentTask(OwnerComp, EBTNodeResult::Aborted);
+		return EBTNodeResult::Failed;
 	}
 	
-	return EBTNodeResult::Succeeded;
+	return EBTNodeResult::InProgress;
 }
 
 void UBTTask_Idle::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
 {
 	Super::TickTask(OwnerComp, NodeMemory, DeltaSeconds);
 	
+	if(GetIsPlayerInRange(OwnerComp, AIData_->GetPlayerRange()) && GetIsPlayerAlive(OwnerComp))
+	{
+		OwnerComp.GetBlackboardComponent()->SetValueAsEnum(CurrentStateVariableName_, ETowerState::Focus);
+		FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
+		return;
+	}
+
+	TurretRef_->RotateTurret(TurretRef_->GetPawnViewLocation(AIData_->GetRotationFreq()));
 }
 
 bool UBTTask_Idle::GetIsPlayerInRange(const UBehaviorTreeComponent& OwnerComp, float Range) const

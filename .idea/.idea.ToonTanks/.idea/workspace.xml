@@ -12,37 +12,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="919b02be-405d-4701-8044-d5c739dadf1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/DataAsset/TurretAIDataAsset.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/DataAssets/PawnDataAsset.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/DataAssets/ShooterDataAsset.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/DataAssets/TankDataAsset.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/DataAsset/TurretAIDataAsset.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/DataAssets/PawnDataAsset.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/DataAssets/ShooterDataAsset.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/DataAssets/TankDataAsset.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/Widgets/GameModeWidget.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/Widgets/PlayerWidget.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/Widgets/ToonTanksHud.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/Widgets/GameModeWidget.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/Widgets/PlayerWidget.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/Widgets/ToonTanksHud.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToonTanks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToonTanks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/BP_TurretAIController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI/BP_TurretAIController.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/BB_Turret.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI/BB_Turret.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/BT_Turret.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI/BT_Turret.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_TankPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_TankPawn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/DA_AITurret.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI/DA_AITurret.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GameModes/BP_ToonTanksGameModeBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/GameModes/BP_ToonTanksGameModeBase.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_TurretPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_TurretPawn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/DataAssets/Pawns/DA_Turret.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Pawns/DataAssets/Pawns/DA_Turret.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/WBP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/WBP_Player.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/Main.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Main.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Services/BTService_HandleShoot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Services/BTService_HandleShoot.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_Idle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_Idle.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_LookAtPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_LookAtPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_Shoot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/Tasks/BTTask_Shoot.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/TurretAIController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/AI/TurretAIController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/Components/ShootComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/Components/ShootComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/ShooterPawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/ShooterPawn.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/TankPawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/TankPawn.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Services/BTService_HandleShoot.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Services/BTService_HandleShoot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/TurretPawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Private/MyPawns/TurretPawn.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/DataAsset/TurretAIDataAsset.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/DataAsset/TurretAIDataAsset.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_Idle.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_Idle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_LookAtPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_LookAtPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_Shoot.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/Tasks/BTTask_Shoot.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/TurretAIController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/AI/TurretAIController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyActors/ProjectileActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyActors/ProjectileActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/Components/ShootComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/Components/ShootComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/ShooterPawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/ShooterPawn.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/TankPawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/TankPawn.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/TurretPawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Public/MyPawns/TurretPawn.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ToonTanks/ToonTanks.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/ToonTanks.Build.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +47,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://C:/Program Files/UEditor/UE_5.5/Engine/Source/Runtime/AIModule/Classes/AIController.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/UEditor/UE_5.5/Engine/Source/Runtime/Core/Public/GenericPlatform/GenericPlatformMath.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/UEditor/UE_5.5/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ToonTanks/Private/AI/Services/BTService_PlayerDistance.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
@@ -68,19 +63,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C/C++ Project.ToonTanks">
     <configuration name="ToonTanks" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -180,6 +176,8 @@
       <workItem from="1736606663616" duration="72000" />
       <workItem from="1736606774903" duration="847000" />
       <workItem from="1736607995750" duration="5056000" />
+      <workItem from="1736689906687" duration="5100000" />
+      <workItem from="1736695088391" duration="3093000" />
     </task>
     <servers />
   </component>

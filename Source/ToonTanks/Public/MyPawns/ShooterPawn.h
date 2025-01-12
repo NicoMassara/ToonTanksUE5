@@ -63,8 +63,6 @@ public:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
 	virtual void RotateTurret(FVector LookAtTarget);
 	virtual void Shoot();
 	virtual void HandleDestruction();

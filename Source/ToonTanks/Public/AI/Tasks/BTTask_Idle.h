@@ -6,6 +6,7 @@
 #include "BehaviorTree/Tasks/BTTask_BlackboardBase.h"
 #include "BTTask_Idle.generated.h"
 
+class ATurretPawn;
 class UTurretAIDataAsset;
 /**
  * 
@@ -25,6 +26,7 @@ private:
 	FName IsPlayerAliveVariableName_;
 
 	TObjectPtr<UTurretAIDataAsset> AIData_;
+	TObjectPtr<ATurretPawn> TurretRef_;
 	
 private:
 	bool GetIsPlayerInRange(const UBehaviorTreeComponent& OwnerComp, float Range) const;

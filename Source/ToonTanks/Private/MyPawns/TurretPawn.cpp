@@ -5,7 +5,7 @@
 
 #include "AI/TurretAIController.h"
 
-
+DEFINE_LOG_CATEGORY(LogTurret)
 // Sets default values
 ATurretPawn::ATurretPawn()
 {
@@ -19,6 +19,7 @@ void ATurretPawn::BeginPlay()
 	Super::BeginPlay();
 
 	TowerAIController_ = GetController<ATurretAIController>();
+	
 }
 
 // Called every frame
@@ -31,6 +32,15 @@ void ATurretPawn::HandleDestruction()
 {
 	Super::HandleDestruction();
 	Destroy();
+}
+
+FVector ATurretPawn::GetPawnViewLocation(float Frequency)
+{	
+	float deltaTime = GetWorld()->GetTimeSeconds();
+	viewX_ = FMath::Cos(deltaTime * Frequency);
+	viewY_ = FMath::Sin(deltaTime * Frequency);
+	
+	return FVector(viewX_, viewY_, 0.0f) + GetActorLocation();
 }
 
 

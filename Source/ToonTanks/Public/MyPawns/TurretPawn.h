@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "ShooterPawn.h"
 #include "TurretPawn.generated.h"
+DECLARE_LOG_CATEGORY_EXTERN(LogTurret, Warning, All)
 
 class ATurretAIController;
 
@@ -18,10 +19,12 @@ public:
 	ATurretPawn();
 
 private:
-	UPROPERTY()
-	ATurretAIController* TowerAIController_;
+	TObjectPtr<ATurretAIController> TowerAIController_;
+	float viewX_;
+	float viewY_;
 
 private:
+
 	
 protected:
 	// Called when the game starts or when spawned
@@ -31,4 +34,5 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual void HandleDestruction() override;
+	virtual FVector GetPawnViewLocation(float Frequency = 1.f);
 };
